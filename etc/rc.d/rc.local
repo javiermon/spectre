@@ -1,0 +1,18 @@
+#!/bin/sh
+
+modprobe cpufreq_conservative
+
+echo conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo conservative > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo conservative > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+echo conservative > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
+
+iw wlan0 set power_save on
+echo 1 > /sys/module/snd_hda_intel/parameters/power_save
+echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+
+# sata pm:
+echo min_power > /sys/class/scsi_host/host0/link_power_management_policy
+echo min_power > /sys/class/scsi_host/host1/link_power_management_policy
+
+echo 3500 > /sys/class/backlight/intel_backlight/brightness

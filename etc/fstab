@@ -1,0 +1,14 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Sat Sep  1 14:33:55 2012
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/vg_spectre-lv_root /                       ext4    noatime        1 1
+UUID=6be774db-c652-4bb5-b2cc-dff9c95feee8 /boot                   ext4    defaults        1 2
+/dev/mapper/vg_spectre-lv_home /home                   ext4    noatime        1 2
+/dev/mapper/vg_spectre-lv_swap swap                    swap    defaults        0 0
+# /tmp on ram
+tmpfs /tmp tmpfs nodev,nosuid,noexec,mode=1777 0 0

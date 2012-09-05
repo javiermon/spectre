@@ -3,5 +3,5 @@ GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=true
 GRUB_DISTRIBUTOR="Fedora"
 GRUB_DEFAULT=saved
-GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0 rd.lvm.lv=vg_spectre/lv_swap rd.luks.uuid=luks-8d78c31a-aed0-44a8-b8a4-00f92a59f936  KEYTABLE=es rd.lvm.lv=vg_spectre/lv_root LANG=en_US.UTF-8 rhgb quiet acpi_backlight=vendor nmi_watchdog=0"
+GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0 rd.lvm.lv=vg_spectre/lv_swap rd.luks.uuid=luks-8d78c31a-aed0-44a8-b8a4-00f92a59f936  KEYTABLE=es rd.lvm.lv=vg_spectre/lv_root LANG=en_US.UTF-8 rhgb quiet acpi_backlight=vendor nmi_watchdog=0 elevator=noop"
 #GRUB_THEME="/boot/grub2/themes/system/theme.txt"

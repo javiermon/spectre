@@ -32,3 +32,7 @@ echo auto > /sys/bus/pci/devices/0000:00:14.0/power/control
 echo auto > /sys/bus/pci/devices/0000:00:16.0/power/control
 echo auto > /sys/bus/pci/devices/0000:00:1a.0/power/control
 echo auto > /sys/bus/pci/devices/0000:02:00.0/power/control
+
+echo 5 > /proc/sys/vm/laptop_mode
+
+echo 1 > /proc/sys/vm/swappiness

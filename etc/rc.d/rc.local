@@ -19,6 +19,7 @@ echo 2000 > /sys/class/backlight/intel_backlight/brightness
 
 ethtool -s em1 wol d
 
+echo auto > /sys/bus/pci/devices/0000:00:1f.0/power/control
 echo auto > /sys/bus/pci/devices/0000:01:00.0/power/control
 echo auto > /sys/bus/pci/devices/0000:00:1f.2/power/control
 echo auto > /sys/bus/pci/devices/0000:00:1d.0/power/control

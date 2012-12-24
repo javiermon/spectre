@@ -37,3 +37,7 @@ echo auto > /sys/bus/pci/devices/0000:02:00.0/power/control
 echo 5 > /proc/sys/vm/laptop_mode
 
 echo 1 > /proc/sys/vm/swappiness
+
+# noop is good for solid-state drives because they
+# have no moving parts, and seek times are identical for all sectors on the disk.
+echo noop > /sys/block/sda/queue/scheduler

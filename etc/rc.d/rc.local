@@ -8,8 +8,7 @@ echo conservative > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 echo conservative > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
 
 iw wlan0 set power_save on
-# disable: after suspend sound in multimedia is shuttered
-# echo 1 > /sys/module/snd_hda_intel/parameters/power_save
+echo 1 > /sys/module/snd_hda_intel/parameters/power_save
 echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
 
 # sata pm:

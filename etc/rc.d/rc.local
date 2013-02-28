@@ -22,6 +22,7 @@ echo min_power > /sys/class/scsi_host/host5/link_power_management_policy
 echo 800 > /sys/class/backlight/intel_backlight/brightness
 
 ethtool -s em1 wol d
+ethtool -s eth0 wol d
 
 echo auto > /sys/bus/pci/devices/0000:00:1f.0/power/control
 echo auto > /sys/bus/pci/devices/0000:01:00.0/power/control
@@ -37,6 +38,8 @@ echo auto > /sys/bus/pci/devices/0000:00:14.0/power/control
 echo auto > /sys/bus/pci/devices/0000:00:16.0/power/control
 echo auto > /sys/bus/pci/devices/0000:00:1a.0/power/control
 echo auto > /sys/bus/pci/devices/0000:02:00.0/power/control
+echo auto > /sys/bus/pci/devices/0000:03:00.0/power/control
+echo auto > /sys/bus/pci/devices/0000:00:1f.3/power/control
 
 echo 5 > /proc/sys/vm/laptop_mode
 

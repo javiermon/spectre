@@ -21,7 +21,12 @@ echo min_power > /sys/class/scsi_host/host5/link_power_management_policy
 
 echo 800 > /sys/class/backlight/intel_backlight/brightness
 
-ethtool -s eth0 wol d
+ethtool -s eno1 wol d
+
+# nmi watchdog
+echo 0 > /proc/sys/kernel/nmi_watchdog
+
+echo auto > /sys/bus/usb/devices/1-1.2/power/control
 
 echo auto > /sys/bus/pci/devices/0000:00:1f.0/power/control
 echo auto > /sys/bus/pci/devices/0000:01:00.0/power/control

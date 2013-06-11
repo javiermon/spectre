@@ -47,3 +47,6 @@ echo 1 > /proc/sys/vm/swappiness
 # noop is good for solid-state drives because they
 # have no moving parts, and seek times are identical for all sectors on the disk.
 echo noop > /sys/block/sda/queue/scheduler
+
+# kill bluetooth
+rfkill block bluetooth

@@ -1,13 +1,16 @@
 #!/bin/sh
 
-cpupower frequency-set --governor performance
+# cpupower frequency-set --governor performance
 # cpupower frequency-set --governor conservative
 
-iw wlo1 set power_save on
+# iw wlo1 set power_save on
+# Enable Audio codec power management
 echo 1 > /sys/module/snd_hda_intel/parameters/power_save
+
+# VM writeback timeout
 echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
 
-# sata pm:
+# Enable SATA link power Managmenet for host_i
 echo min_power > /sys/class/scsi_host/host0/link_power_management_policy
 echo min_power > /sys/class/scsi_host/host1/link_power_management_policy
 echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
@@ -19,11 +22,13 @@ echo 800 > /sys/class/backlight/intel_backlight/brightness
 
 ethtool -s eno1 wol d
 
-# nmi watchdog
+# NMI watchdog should be turned off
 echo 0 > /proc/sys/kernel/nmi_watchdog
 
+# Autosuspend for unknown USB device 1-1.2 (8087:07da)
 echo auto > /sys/bus/usb/devices/1-1.2/power/control
 
+# Runtime PM for PCI Device
 echo auto > /sys/bus/pci/devices/0000:00:1f.0/power/control
 echo auto > /sys/bus/pci/devices/0000:01:00.0/power/control
 echo auto > /sys/bus/pci/devices/0000:00:1f.2/power/control

@@ -1,7 +1,10 @@
 GRUB_HIDDEN_TIMEOUT=3
 GRUB_HIDDEN_TIMEOUT_QUIET=true
 GRUB_TIMEOUT=0
-GRUB_DISTRIBUTOR="Fedora"
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved
-GRUB_CMDLINE_LINUX="rd.md=0 rd.dm=0 rd.lvm.lv=vg_spectre/lv_swap rd.luks.uuid=luks-8d78c31a-aed0-44a8-b8a4-00f92a59f936  KEYMAP=es rd.lvm.lv=vg_spectre/lv_root rhgb quiet acpi_backlight=vendor nmi_watchdog=0 elevator=noop"
-#GRUB_THEME="/boot/grub2/themes/system/theme.txt"
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="rd.lvm.lv=fedora/swap rd.md=0 rd.dm=0 vconsole.keymap=es rd.luks.uuid=luks-e7d0665a-84ca-4149-9f98-ffcb07abfb87 $([ -x /usr/sbin/rhcrashkernel-param ] && /usr/sbin/rhcrashkernel-param || :) vconsole.font=latarcyrheb-sun16 rd.lvm.lv=fedora/root rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
+GRUB_THEME="/boot/grub2/themes/system/theme.txt"

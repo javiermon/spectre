@@ -18,7 +18,7 @@ echo min_power > /sys/class/scsi_host/host3/link_power_management_policy
 echo min_power > /sys/class/scsi_host/host4/link_power_management_policy
 echo min_power > /sys/class/scsi_host/host5/link_power_management_policy
 
-echo 800 > /sys/class/backlight/intel_backlight/brightness
+# echo 800 > /sys/class/backlight/intel_backlight/brightness
 
 ethtool -s em1 wol d
 
